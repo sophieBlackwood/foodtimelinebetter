@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
@@ -22,6 +23,7 @@
         </div>
     </header>
 
+    <!-- Navigation -->
     <nav class="sticky-nav">
         <div class="container nav-wrapper">
             <div class="logo">FT<span>.</span></div>
@@ -35,13 +37,15 @@
     </nav>
 
     <main class="container">
-        
+
+        <!-- Search Section -->
         <section class="search-section">
             <div class="search-box">
                 <input type="text" id="foodSearch" placeholder="Search food or era (e.g., '18th Century', 'Pizza')...">
             </div>
         </section>
 
+        <!-- Updates Section -->
         <section id="updates" class="glass-card">
             <div class="update-header">
                 <h2>Latest Archive Updates</h2>
@@ -55,35 +59,66 @@
             </div>
         </section>
 
+        <!-- Timeline Section -->
         <section id="index">
             <h2 class="section-title">Culinary Timeline</h2>
             <div class="timeline-grid">
-                
+
+                <!-- Origins of Food -->
                 <div class="category-group">
                     <div class="category-header">
-                        <span class="icon">🥗</span>
                         <h3>Origins of Food</h3>
                     </div>
                     <ul class="item-list">
-                        <li><div class="item-info"><strong>Water & Ice</strong><small>Basic essentials</small></div> <span class="era">Ancient</span></li>
-                        <li><div class="item-info"><strong>Wine & Beer</strong><small>Early fermentation</small></div> <span class="era">7,000 BC</span></li>
-                        <li><div class="item-info"><strong>Chocolate</strong><small>Mesoamerican origin</small></div> <span class="era">1,500 BC</span></li>
-                        <li><div class="item-info"><strong>Pizza</strong><small>Neapolitan classic</small></div> <span class="era">1889</span></li>
-                        <li><div class="item-info"><strong>Cronuts</strong><small>Modern pastry innovation</small></div> <span class="era">2013</span></li>
+                        <li>
+                            <div class="item-info"><strong>Water & Ice</strong><small>Basic essentials</small></div>
+                            <span class="era">Ancient</span>
+                        </li>
+                        <li>
+                            <div class="item-info"><strong>Wine & Beer</strong><small>Early fermentation</small></div>
+                            <span class="era">7,000 BC</span>
+                        </li>
+                        <li>
+                            <div class="item-info"><strong>Chocolate</strong><small>Mesoamerican origin</small></div>
+                            <span class="era">1,500 BC</span>
+                        </li>
+                        <li>
+                            <div class="item-info"><strong>Pizza</strong><small>Neapolitan classic</small></div>
+                            <span class="era">1889</span>
+                        </li>
+                        <li>
+                            <div class="item-info"><strong>Cronuts</strong><small>Modern pastry innovation</small></div>
+                            <span class="era">2013</span>
+                        </li>
                     </ul>
                 </div>
 
+                <!-- Historical Recipes -->
                 <div id="recipes" class="category-group">
                     <div class="category-header">
-                        <span class="icon">📜</span>
                         <h3>Historical Recipes</h3>
                     </div>
                     <ul class="item-list">
-                        <li><div class="item-info"><strong>Ancient Rome</strong><small>Apicius’ notes</small></div> <span class="era">1st Century</span></li>
-                        <li><div class="item-info"><strong>Kimchi</strong><small>Korean preservation methods</small></div> <span class="era">7th Century</span></li>
-                        <li><div class="item-info"><strong>Apple Pie</strong><small>Medieval English recipe</small></div> <span class="era">1381</span></li>
-                        <li><div class="item-info"><strong>Potato Salad</strong><small>New World introduction</small></div> <span class="era">1597</span></li>
-                        <li><div class="item-info"><strong>Lemon Meringue</strong><small>Victorian refinement</small></div> <span class="era">1691</span></li>
+                        <li>
+                            <div class="item-info"><strong>Ancient Rome</strong><small>Apicius’ notes</small></div>
+                            <span class="era">1st Century</span>
+                        </li>
+                        <li>
+                            <div class="item-info"><strong>Kimchi</strong><small>Korean preservation methods</small></div>
+                            <span class="era">7th Century</span>
+                        </li>
+                        <li>
+                            <div class="item-info"><strong>Apple Pie</strong><small>Medieval English recipe</small></div>
+                            <span class="era">1381</span>
+                        </li>
+                        <li>
+                            <div class="item-info"><strong>Potato Salad</strong><small>New World introduction</small></div>
+                            <span class="era">1597</span>
+                        </li>
+                        <li>
+                            <div class="item-info"><strong>Lemon Meringue</strong><small>Victorian refinement</small></div>
+                            <span class="era">1691</span>
+                        </li>
                     </ul>
                 </div>
 
@@ -92,6 +127,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -107,17 +143,18 @@
         </div>
     </footer>
 
+    <!-- Search Script -->
     <script>
-        // Search functionality
         document.getElementById('foodSearch').addEventListener('keyup', function() {
-            let filter = this.value.toLowerCase();
-            let items = document.querySelectorAll('.item-list li');
-            
+            const filter = this.value.toLowerCase();
+            const items = document.querySelectorAll('.item-list li');
+
             items.forEach(item => {
-                let text = item.textContent.toLowerCase();
-                item.style.display = text.includes(filter) ? "flex" : "none";
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(filter) ? 'flex' : 'none';
             });
         });
     </script>
+
 </body>
 </html>
