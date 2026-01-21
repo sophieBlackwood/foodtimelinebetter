@@ -6,6 +6,38 @@
     <title>Food Timeline | A Digital Archive of Culinary History</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Tooltip styles for timeline items */
+        .item-list li {
+            position: relative;
+            cursor: help;
+        }
+
+        .item-list li::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #FF3366;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            width: max-content;
+            max-width: 250px;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .item-list li:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
 </head>
 <body>
 
@@ -65,24 +97,24 @@
                         <h3>Origins of Food</h3>
                     </div>
                     <ul class="item-list">
-                        <li>
-                            <div class="item-info"><strong>Water & Ice </strong><small>Basic essentials</small></div>
+                        <li data-tooltip="Water and ice have been essential for life and food preservation since ancient times.">
+                            <div class="item-info"><strong>Water & Ice</strong><small>Basic essentials</small></div>
                             <span class="era">Ancient</span>
                         </li>
-                        <li>
-                            <div class="item-info"><strong>Wine & Beer </strong><small>Early fermentation</small></div>
+                        <li data-tooltip="Fermented beverages like wine and beer date back over 7,000 years and were important in early civilizations.">
+                            <div class="item-info"><strong>Wine & Beer</strong><small>Early fermentation</small></div>
                             <span class="era">7,000 BC</span>
                         </li>
-                        <li>
-                            <div class="item-info"><strong>Chocolate </strong><small>Mesoamerican origin</small></div>
+                        <li data-tooltip="Chocolate was first cultivated by Mesoamerican cultures and was considered a sacred drink.">
+                            <div class="item-info"><strong>Chocolate</strong><small>Mesoamerican origin</small></div>
                             <span class="era">1,500 BC</span>
                         </li>
-                        <li>
-                            <div class="item-info"><strong>Pizza </strong><small>Neapolitan classic</small></div>
+                        <li data-tooltip="Pizza as we know it was popularized in Naples, Italy, in the late 19th century.">
+                            <div class="item-info"><strong>Pizza</strong><small>Neapolitan classic</small></div>
                             <span class="era">1889</span>
                         </li>
-                        <li>
-                            <div class="item-info"><strong>Cronuts </strong><small>Modern pastry innovation</small></div>
+                        <li data-tooltip="Cronuts are a modern pastry invention, blending croissant and donut, created in 2013.">
+                            <div class="item-info"><strong>Cronuts</strong><small>Modern pastry innovation</small></div>
                             <span class="era">2013</span>
                         </li>
                     </ul>
@@ -94,24 +126,24 @@
                         <h3>Historical Recipes</h3>
                     </div>
                     <ul class="item-list">
-                        <li>
-                            <div class="item-info"><strong>Ancient Rome </strong><small>Apicius’ notes</small></div>
+                        <li data-tooltip="Apicius' recipes provide one of the earliest known records of Roman cuisine.">
+                            <div class="item-info"><strong>Ancient Rome</strong><small>Apicius’ notes</small></div>
                             <span class="era">1st Century</span>
                         </li>
-                        <li>
-                            <div class="item-info"><strong>Kimchi </strong><small>Korean preservation methods</small></div>
+                        <li data-tooltip="Kimchi has been preserved using fermentation for centuries in Korea, providing essential nutrition in winter.">
+                            <div class="item-info"><strong>Kimchi</strong><small>Korean preservation methods</small></div>
                             <span class="era">7th Century</span>
                         </li>
-                        <li>
-                            <div class="item-info"><strong>Apple Pie </strong><small>Medieval English recipe</small></div>
+                        <li data-tooltip="Apple pie recipes have been documented in England since the 14th century.">
+                            <div class="item-info"><strong>Apple Pie</strong><small>Medieval English recipe</small></div>
                             <span class="era">1381</span>
                         </li>
-                        <li>
-                            <div class="item-info"><strong>Potato Salad </strong><small>New World introduction</small></div>
+                        <li data-tooltip="Potato salad recipes spread to Europe after potatoes were introduced from the New World in the 16th century.">
+                            <div class="item-info"><strong>Potato Salad</strong><small>New World introduction</small></div>
                             <span class="era">1597</span>
                         </li>
-                        <li>
-                            <div class="item-info"><strong>Lemon Meringue </strong><small>Victorian refinement</small></div>
+                        <li data-tooltip="Lemon meringue pie became popular in the Victorian era, showcasing refined baking techniques.">
+                            <div class="item-info"><strong>Lemon Meringue</strong><small>Victorian refinement</small></div>
                             <span class="era">1691</span>
                         </li>
                     </ul>
