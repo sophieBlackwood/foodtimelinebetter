@@ -3,7 +3,7 @@
 /* Import premium fonts */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
 
-/* Variables for precise Bold & Sleek adjustments */
+/* Variables */
 :root {
     --primary-grad: linear-gradient(135deg, #FF3366 0%, #6A0DAD 100%);
     --bg-grad: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
@@ -15,26 +15,12 @@
     --hover-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
 
-/* Reset and base styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.8; background: var(--bg-grad); color: var(--dark); min-height: 100vh; }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    line-height: 1.8;
-    background: var(--bg-grad);
-    color: var(--dark);
-    min-height: 100vh;
-}
-
-/* Header - Bold Hero Entrance */
+/* Header */
 header {
     background: var(--primary-grad);
     color: #fff;
@@ -66,7 +52,7 @@ header p {
     letter-spacing: -0.5px;
 }
 
-/* Navigation - Modern Floating Glass */
+/* Navigation */
 nav {
     position: sticky;
     top: 20px;
@@ -76,17 +62,13 @@ nav {
     backdrop-filter: blur(20px) saturate(180%);
     z-index: 1000;
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255,255,255,0.4);
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     display: flex;
     justify-content: center;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
+nav ul { list-style: none; display: flex; gap: 15px; }
 
 nav a {
     color: var(--dark);
@@ -106,7 +88,7 @@ nav a:hover {
     transform: translateY(-3px) scale(1.05);
 }
 
-/* Content Cards */
+/* Sections & Cards */
 section {
     padding: 80px 50px;
     margin: 60px auto;
@@ -117,15 +99,12 @@ section {
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-section:hover {
-    box-shadow: var(--hover-shadow);
-}
+section:hover { box-shadow: var(--hover-shadow); }
 
-/* Talkative Sections */
+/* Updates Section */
 #updates {
     border-top: 12px solid #FFD700;
     position: relative;
-    overflow: hidden;
 }
 
 #updates::before {
@@ -140,33 +119,19 @@ section:hover {
     font-size: 0.7rem;
 }
 
-#index h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 900;
-    margin-bottom: 50px;
-    text-align: center;
-}
+/* Timeline */
+.timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 50px; }
 
-/* Timeline Interactivity */
-.timeline-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 50px;
-}
-
-.timeline-category h3 {
+.category-header h3 {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     margin-bottom: 25px;
     color: var(--accent);
 }
 
-.timeline-list {
-    list-style: none;
-}
+.item-list { list-style: none; }
 
-.timeline-list li {
+.item-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -175,36 +140,36 @@ section:hover {
     background: #fdfdfd;
     border: 1px solid #eee;
     border-radius: 20px;
-    cursor: help;
+    cursor: default;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
-.timeline-list li:hover {
+.item-list li:hover {
     background: var(--dark);
     color: #fff;
     border-color: var(--dark);
-    transform: scale(1.03) translateX(10px);
+    transform: scale(1.03) translateX(5px);
     z-index: 5;
 }
 
-.timeline-list li .date {
+.item-list li .era {
     font-weight: 800;
     background: #eee;
     padding: 4px 12px;
     border-radius: 10px;
     font-size: 0.8rem;
     color: var(--dark);
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
-.timeline-list li:hover .date {
+.item-list li:hover .era {
     background: var(--accent);
     color: #fff;
 }
 
-/* The "Talkative" Tooltip Expansion */
-.timeline-list li::after {
+/* Tooltip / Talkative Hint */
+.item-list li::after {
     content: "💡 Did you know? Most recipes in this era were passed down orally before being written.";
     position: absolute;
     top: -50px;
@@ -223,12 +188,12 @@ section:hover {
     box-shadow: 0 10px 20px var(--accent-glow);
 }
 
-.timeline-list li:hover::after {
+.item-list li:hover::after {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
 
-/* Footers & Alerts */
+/* Footer & Alerts */
 .main-footer {
     background: var(--dark);
     color: rgba(255,255,255,0.6);
@@ -246,13 +211,10 @@ section:hover {
     font-style: italic;
 }
 
-/* Dynamic Animations */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* Animations */
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Mobile Polish */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     header { padding: 100px 20px 60px; }
     nav { top: 10px; padding: 10px; }
