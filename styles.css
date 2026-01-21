@@ -1,16 +1,18 @@
 /* styles.css - Bold, Talkative, Modern, Sleek, and Responsive Design */
 
-/* Import bold fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap');
+/* Import premium fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
 
-/* Variables for easy Bold adjustments */
+/* Variables for precise Bold & Sleek adjustments */
 :root {
-    --primary-grad: linear-gradient(135deg, #ff4757 0%, #5f27cd 100%);
-    --bg-grad: linear-gradient(135deg, #f1f2f6 0%, #dfe4ea 100%);
-    --accent: #ff4757;
-    --dark: #2f3542;
-    --glass: rgba(255, 255, 255, 0.85);
-    --shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    --primary-grad: linear-gradient(135deg, #FF3366 0%, #6A0DAD 100%);
+    --bg-grad: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    --accent: #FF3366;
+    --accent-glow: rgba(255, 51, 102, 0.4);
+    --dark: #121212;
+    --glass: rgba(255, 255, 255, 0.82);
+    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    --hover-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
 
 /* Reset and base styles */
@@ -20,217 +22,240 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.7;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.8;
     background: var(--bg-grad);
     color: var(--dark);
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
-/* Header - Dramatic Entrance */
+/* Header - Bold Hero Entrance */
 header {
     background: var(--primary-grad);
     color: #fff;
-    padding: 100px 20px 80px;
+    padding: 140px 20px 100px;
     text-align: center;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-    box-shadow: var(--shadow);
-    animation: slideIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    box-shadow: var(--card-shadow);
+    animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(3rem, 10vw, 6.5rem);
     font-weight: 900;
-    margin-bottom: 20px;
-    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-    text-transform: uppercase;
-    letter-spacing: -2px;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -3px;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
 }
 
 header p {
-    font-size: 1.3rem;
-    font-weight: 700;
-    max-width: 800px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    max-width: 750px;
     margin: 0 auto;
-    opacity: 0.9;
-    line-height: 1.4;
+    opacity: 0.95;
+    letter-spacing: -0.5px;
 }
 
-/* Navigation - Glassmorphism */
+/* Navigation - Modern Floating Glass */
 nav {
     position: sticky;
-    top: 0;
+    top: 20px;
+    margin: -30px 20px 0;
     background: var(--glass);
-    padding: 15px 0;
-    backdrop-filter: blur(15px);
+    padding: 15px 30px;
+    backdrop-filter: blur(20px) saturate(180%);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    gap: 15px;
 }
 
 nav a {
     color: var(--dark);
     text-decoration: none;
-    font-weight: 900;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    font-weight: 800;
+    padding: 10px 22px;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 1px;
 }
 
 nav a:hover {
-    background: var(--accent);
+    background: var(--dark);
     color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+    transform: translateY(-3px) scale(1.05);
 }
 
-/* Section Containers */
+/* Content Cards */
 section {
-    padding: 60px 40px;
-    margin: -40px auto 80px; /* Overlaps header slightly for modern look */
-    max-width: 1100px;
-    background: #fff;
-    border-radius: 30px;
-    box-shadow: var(--shadow);
-    position: relative;
-    z-index: 10;
+    padding: 80px 50px;
+    margin: 60px auto;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 40px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+section:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+/* Talkative Sections */
 #updates {
-    background: #fff;
-    border-left: 10px solid #ffa502;
+    border-top: 12px solid #FFD700;
+    position: relative;
+    overflow: hidden;
+}
+
+#updates::before {
+    content: "LATEST";
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: #FFD700;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-weight: 800;
+    font-size: 0.7rem;
 }
 
 #index h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 3rem;
     font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
     font-weight: 900;
-    color: var(--dark);
+    margin-bottom: 50px;
+    text-align: center;
 }
 
-/* Timeline Grid */
-.timeline {
+/* Timeline Interactivity */
+.timeline-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 50px;
 }
 
-.timeline h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--accent);
+.timeline-category h3 {
     font-family: 'Playfair Display', serif;
-    border-bottom: 4px solid var(--accent);
-    display: inline-block;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: var(--accent);
 }
 
-.timeline li {
-    padding: 18px 25px;
-    margin-bottom: 12px;
-    background: #f8f9fa;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    font-weight: 500;
-    position: relative;
+.timeline-list {
     list-style: none;
-    border-left: 0px solid var(--accent);
-    cursor: help; /* Suggests the tooltip */
 }
 
-.timeline li:hover {
-    transform: scale(1.05) translateX(10px);
+.timeline-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    cursor: help;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.timeline-list li:hover {
     background: var(--dark);
     color: #fff;
-    border-left: 8px solid var(--accent);
+    border-color: var(--dark);
+    transform: scale(1.03) translateX(10px);
+    z-index: 5;
 }
 
-.timeline li strong {
-    color: var(--accent);
-    transition: color 0.3s ease;
+.timeline-list li .date {
+    font-weight: 800;
+    background: #eee;
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: var(--dark);
+    transition: background 0.3s;
 }
 
-.timeline li:hover strong {
+.timeline-list li:hover .date {
+    background: var(--accent);
     color: #fff;
 }
 
-/* Talkative Tooltips */
-.timeline li::after {
-    content: "Historical Fact: Foods evolve, they aren't just invented!";
+/* The "Talkative" Tooltip Expansion */
+.timeline-list li::after {
+    content: "💡 Did you know? Most recipes in this era were passed down orally before being written.";
     position: absolute;
-    bottom: 110%;
+    top: -50px;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    background: var(--dark);
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 10px;
+    background: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 15px;
     font-size: 0.85rem;
-    font-weight: 400;
-    width: 200px;
+    width: 250px;
     text-align: center;
     opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    z-index: 100;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px var(--accent-glow);
 }
 
-.timeline li:hover::after {
+.timeline-list li:hover::after {
     opacity: 1;
-    visibility: visible;
     transform: translateX(-50%) translateY(0);
 }
 
-/* Allergy Alert - Vibrating Attention */
-#alert {
-    background: #ff4757;
-    color: #fff;
-    padding: 40px;
-    border-radius: 20px;
+/* Footers & Alerts */
+.main-footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    padding: 80px 20px;
     text-align: center;
-    margin: 40px auto;
-    max-width: 800px;
-    box-shadow: 0 0 30px rgba(255, 71, 87, 0.4);
-    animation: pulse 2s infinite;
+    font-weight: 600;
 }
 
-/* Animations */
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(-100px); }
+.alert {
+    background: #fff4f4;
+    border-left: 5px solid var(--accent);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+/* Dynamic Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); box-shadow: 0 0 50px rgba(255, 71, 87, 0.6); }
-    100% { transform: scale(1); }
-}
-
-/* Mobile Responsiveness */
+/* Mobile Polish */
 @media (max-width: 768px) {
-    header { padding: 60px 20px; }
-    section { padding: 30px 20px; margin: -20px 15px 40px; }
-    nav ul { gap: 10px; flex-wrap: wrap; }
-    .timeline { grid-template-columns: 1fr; }
-}
-
-/* Accessibility */
-a:focus {
-    outline: 4px solid #ffa502;
-    outline-offset: 4px;
+    header { padding: 100px 20px 60px; }
+    nav { top: 10px; padding: 10px; }
+    nav a { padding: 8px 12px; font-size: 0.7rem; }
+    section { padding: 40px 25px; margin: 30px 15px; }
 }
