@@ -1,4 +1,4 @@
-/* styles.css - Bold, Talkative, Modern, Sleek, and Responsive Design */
+/* styles.css - Bold, Talkative, Modern, Sleek, Responsive */
 
 /* Import premium fonts */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
@@ -170,9 +170,9 @@ section:hover { box-shadow: var(--hover-shadow); }
 
 /* Tooltip / Talkative Hint */
 .item-list li::after {
-    content: "💡 Did you know? Most recipes in this era were passed down orally before being written.";
+    content: attr(data-tooltip); /* Unique tooltip per item */
     position: absolute;
-    top: -50px;
+    top: -60px;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: var(--accent);
@@ -220,4 +220,5 @@ section:hover { box-shadow: var(--hover-shadow); }
     nav { top: 10px; padding: 10px; }
     nav a { padding: 8px 12px; font-size: 0.7rem; }
     section { padding: 40px 25px; margin: 30px 15px; }
+    .timeline-grid { gap: 30px; }
 }
